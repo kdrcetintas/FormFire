@@ -50,6 +50,7 @@
     <Compile Include="Exceptions\FormFireExceptions.cs" />
     <Compile Include="Helpers\FireForm.cs" />
     <Compile Include="FormFireManager.cs" />
+    <Compile Include="Helpers\FireFormHelper.cs" />
     <Compile Include="Helpers\FireFormHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
