@@ -1,4 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire\bin\Debug\FormFire.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire\bin\Debug\FormFire.pdb
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire\obj\Debug\FormFire.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire\obj\Debug\FormFire.pdb

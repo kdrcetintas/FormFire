@@ -1,8 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\bin\Debug\FormFire.Tests.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\bin\Debug\FormFire.Tests.pdb
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\bin\Debug\FormFire.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\bin\Debug\FormFire.pdb
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\obj\Debug\FormFire.Tests.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\obj\Debug\FormFire.Tests.dll
-C:\Users\Administrator\Documents\GitHub\FormFire\FormFire\FormFire.Tests\obj\Debug\FormFire.Tests.pdb
