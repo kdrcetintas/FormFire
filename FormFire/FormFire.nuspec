@@ -8,14 +8,13 @@
     <owners>kdrcetintas</owners>
     <licenseUrl>https://github.com/kdrcetintas/FormFire/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/kdrcetintas/FormFire/</projectUrl>
-    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Dont waste your time for managing desktop application forms. Easy to use!</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright © 2018 Kadir Çetintaş</copyright>
     <tags>form manager, .net form manager</tags>
     <dependencies>
-      <dependency id="System.Windows.Forms.Form" />
+      <dependency id="" />
     </dependencies>
     <summary>
       Dont waste your time for managing desktop application forms.

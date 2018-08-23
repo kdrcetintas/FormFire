@@ -16,9 +16,6 @@ namespace FormFire.Examples
            
             FormFireManager<Form>.Instance.OpenMainFormWithClosePrompt<SampleForm>("Are you sure for close this application", "FormFire.Examples");
 
-            FormFireManager<Form>.Instance.OpenSingleFormWithClosePrompt<AnotherSampleForm>("Are you sure for close this form",
-                "FormFire.Examples");
-
             Application.Run();
         }
     }

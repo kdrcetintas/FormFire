@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FormFire.Core;
 
 namespace FormFire.Examples
 {
@@ -14,6 +15,12 @@ namespace FormFire.Examples
         public SampleForm()
         {
             InitializeComponent();
+        }
+
+        private void SampleForm_Load(object sender, EventArgs e)
+        {
+            FormFireManager<Form>.Instance.OpenSingleFormWithClosePrompt<AnotherSampleForm>("Are you sure for close this form",
+                "FormFire.Examples");
         }
     }
 }
