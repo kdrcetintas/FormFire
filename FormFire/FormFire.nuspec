@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>    
+    <id>FormFire</id>
+    <version>1.0.0.1</version>
+    <title>FormFire</title>
+    <authors>Kadir Çetintaş</authors>
+    <owners>kdrcetintas</owners>
+    <licenseUrl>https://github.com/kdrcetintas/FormFire/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/kdrcetintas/FormFire/</projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Dont waste your time for managing desktop application forms. Easy to use!</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright © 2018 Kadir Çetintaş</copyright>
+    <tags>form manager, .net form manager</tags>
+    <dependencies>
+      <dependency id="System.Windows.Forms.Form" />
+    </dependencies>
+    <summary></summary>
+  </metadata>
+  <files>
+    <file src="" target="" />
+  </files>
+</package>
