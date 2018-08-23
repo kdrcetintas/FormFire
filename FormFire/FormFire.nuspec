@@ -17,9 +17,13 @@
     <dependencies>
       <dependency id="System.Windows.Forms.Form" />
     </dependencies>
-    <summary></summary>
+    <summary>
+      Dont waste your time for managing desktop application forms.
+      Check the github.com/kdrcetintas/FormFire for instrucations
+    </summary>
   </metadata>
   <files>
-    <file src="" target="" />
+    <file src="README.md" target="README.md" />
+    <file src="LICENSE" target="LICENSE" />
   </files>
 </package>
