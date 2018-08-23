@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormFire.Core\FireForm.cs" />
-    <Compile Include="FormFire.Core\FormFireManager.cs" />
+    <Compile Include="Exceptions\FormFireExceptions.cs" />
+    <Compile Include="Helpers\FireForm.cs" />
+    <Compile Include="FormFireManager.cs" />
+    <Compile Include="Helpers\FireFormHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
