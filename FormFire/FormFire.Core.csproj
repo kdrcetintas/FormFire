@@ -46,15 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FireForm.cs" />
-    <Compile Include="FormFireManager.cs" />
+    <Compile Include="FormFire.Core\FireForm.cs" />
+    <Compile Include="FormFire.Core\FormFireManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FormFire.nuspec" />
     <None Include="FormFire.pfx" />
-    <None Include="LICENSE" />
-    <None Include="README.md" />
+    <Content Include="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
