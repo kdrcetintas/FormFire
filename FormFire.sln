@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormFire.Core", "FormFire\FormFire.Core.csproj", "{C400989D-BAB7-4AAC-8FE3-EE51AEE75301}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormFire.Core", "src\FormFire\FormFire.Core.csproj", "{C400989D-BAB7-4AAC-8FE3-EE51AEE75301}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormFire.Tests", "FormFire.Tests\FormFire.Tests.csproj", "{934862B1-989A-4098-A71A-73CC74B31D29}"
 EndProject
