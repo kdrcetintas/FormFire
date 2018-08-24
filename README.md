@@ -1,5 +1,5 @@
 # FormFire
 
-[![Chat](https://badges.gitter.im/hookengine/gitter.png)](https://gitter.im/hookengine/Lobby)
+[![Chat](https://badges.gitter.im/FormFire/gitter.png)](https://gitter.im/FormFire/Lobby)
 
 Dont waste your time for managing forms.
