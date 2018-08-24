@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FormFire.Core;
 
 namespace FormFire.Examples
 {
@@ -21,6 +22,21 @@ namespace FormFire.Examples
         public AnotherSampleForm()
         {
             InitializeComponent();
+        }
+
+        private void AnotherSampleForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormFireManager<Form>.Instance.GetForms<SampleForm>().FirstOrDefault().Form<SampleForm>().Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormFireManager<Form>.Instance.GetForms<SampleForm>().FirstOrDefault().Form<SampleForm>().Show();
         }
     }
 }

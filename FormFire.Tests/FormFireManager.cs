@@ -10,6 +10,19 @@ using System.Windows.Forms;
 using FormFire.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace FormFire.Core.Tests
+{
+    [TestClass()]
+    public class FormFireManager
+    {
+        [TestMethod()]
+        public void GetFormsTest()
+        {
+            Assert.Fail();
+        }
+    }
+}
+
 namespace FormFire.Tests
 {
     [TestClass]

@@ -22,13 +22,20 @@ namespace FormFire.Core
         }
 
         private List<FireForm<T>> InstanceForms { get; }
-        private static FormFireManager<T> InstanceContainer { get; }
+        private static FormFireManager<T> InstanceContainer { get; set; }
 
         /// <summary>
         ///     The static instance keeper property. When you access to formanager with specificied generic type, it's will create
         ///     an instance and assign the this property.
         /// </summary>
-        public static FormFireManager<T> Instance => (InstanceContainer ?? new FormFireManager<T>());
+        public static FormFireManager<T> Instance
+        {
+            get
+            {
+                if (InstanceContainer == null) InstanceContainer = new FormFireManager<T>();
+                return InstanceContainer;
+            }
+        }
 
         #region OpenForm Methods
         /// <summary>
@@ -271,7 +278,7 @@ namespace FormFire.Core
         /// <returns>Returns initalized / finded form object</returns>
         public TU OpenSingleForm<TU>() where TU : T, new()
         {
-            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.Form<TU>().GetType() == typeof(TU));
+            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU));
             if (findedFireForm == null)
             {
                 var fireForm = FireFormHelper<T>.Create<TU>();
@@ -305,7 +312,7 @@ namespace FormFire.Core
             {
                 throw new ArgumentNullException(nameof(promptTitle));
             }
-            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.Form<TU>().GetType() == typeof(TU));
+            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU));
             if (findedFireForm == null)
             {
                 var fireForm = FireFormHelper<T>.Create<TU>();
@@ -346,7 +353,7 @@ namespace FormFire.Core
             {
                 throw new ArgumentNullException(nameof(promptTitle));
             }
-            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.Form<TU>().GetType() == typeof(TU));
+            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU));
             if (findedFireForm == null)
             {
                 var fireForm = FireFormHelper<T>.Create<TU>(args);
@@ -379,7 +386,7 @@ namespace FormFire.Core
             {
                 throw new ArgumentNullException(nameof(args));
             }
-            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.Form<TU>().GetType() == typeof(TU));
+            var findedFireForm = InstanceForms.FirstOrDefault(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU));
             if (findedFireForm == null)
             {
                 var fireForm = FireFormHelper<T>.Create<TU>(args);
@@ -391,6 +398,112 @@ namespace FormFire.Core
             findedFireForm.Show();
             AttachFireFormEvents(findedFireForm);
             return findedFireForm.Form<TU>();
+        }
+
+        public TU CreateFormOnly<TU>()
+        {
+            if (InstanceForms == null)
+            {
+                throw new FormFireExceptions.FireFormListException("Instance Forms property is not initalized, Probably wrong call FormFireManager");
+            }
+            try
+            {
+                var fireForm = FireFormHelper<T>.Create<TU>();
+                InstanceForms.Add(fireForm);
+                AttachFireFormEvents(fireForm);
+                return fireForm.Form<TU>();
+            }
+            catch (Exception exception)
+            {
+                throw new FormFireExceptions.CreateFormInstanceException(exception.Message, exception);
+            }
+        }
+
+        public TU CreateFormOnly<TU>(object[] args)
+        {
+            if (InstanceForms == null)
+            {
+                throw new FormFireExceptions.FireFormListException("Instance Forms property is not initalized, Probably wrong call FormFireManager");
+            }
+            if (args == null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+            try
+            {
+                var fireForm = FireFormHelper<T>.Create<TU>(args);
+                InstanceForms.Add(fireForm);
+                AttachFireFormEvents(fireForm);
+                return fireForm.Form<TU>();
+            }
+            catch (Exception exception)
+            {
+                throw new FormFireExceptions.CreateFormInstanceException(exception.Message, exception);
+            }
+        }
+
+        public TU CreateFormOnlyWithClosePrompt<TU>(string promptMessage, string promptTitle)
+        {
+            if (InstanceForms == null)
+            {
+                throw new FormFireExceptions.FireFormListException("Instance Forms property is not initalized, Probably wrong call FormFireManager");
+            }
+            if (string.IsNullOrEmpty(promptMessage))
+            {
+                throw new ArgumentNullException(nameof(promptTitle));
+            }
+            if (string.IsNullOrEmpty(promptTitle))
+            {
+                throw new ArgumentNullException(nameof(promptTitle));
+            }
+            try
+            {
+                var fireForm = FireFormHelper<T>.Create<TU>();
+                fireForm.IsHasPrompt = true;
+                fireForm.PromptTitle = promptTitle;
+                fireForm.PromptMessage = promptMessage;
+                InstanceForms.Add(fireForm);
+                AttachFireFormEvents(fireForm);
+                return fireForm.Form<TU>();
+            }
+            catch (Exception exception)
+            {
+                throw new FormFireExceptions.CreateFormInstanceException(exception.Message, exception);
+            }
+        }
+
+        public TU CreateFormOnlyWithClosePrompt<TU>(object[] args, string promptMessage, string promptTitle)
+        {
+            if (InstanceForms == null)
+            {
+                throw new FormFireExceptions.FireFormListException("Instance Forms property is not initalized, Probably wrong call FormFireManager");
+            }
+            if (args == null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+            if (string.IsNullOrEmpty(promptMessage))
+            {
+                throw new ArgumentNullException(nameof(promptTitle));
+            }
+            if (string.IsNullOrEmpty(promptTitle))
+            {
+                throw new ArgumentNullException(nameof(promptTitle));
+            }
+            try
+            {
+                var fireForm = FireFormHelper<T>.Create<TU>(args);
+                fireForm.IsHasPrompt = true;
+                fireForm.PromptTitle = promptTitle;
+                fireForm.PromptMessage = promptMessage;
+                InstanceForms.Add(fireForm);
+                AttachFireFormEvents(fireForm);
+                return fireForm.Form<TU>();
+            }
+            catch (Exception exception)
+            {
+                throw new FormFireExceptions.CreateFormInstanceException(exception.Message, exception);
+            }
         }
         #endregion
 
@@ -459,7 +572,7 @@ namespace FormFire.Core
         /// <returns>a boolean of any form is proccessed on this void</returns>
         public bool CloseForms<TU>() where TU : T, new()
         {
-            var findedForms = InstanceForms.Where(r => r.IsDisposed == false && r.GetType() == typeof(TU)).ToList();
+            var findedForms = InstanceForms.Where(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU)).ToList();
             if (!findedForms.Any()) return false;
             findedForms.ForEach(r =>
             {
