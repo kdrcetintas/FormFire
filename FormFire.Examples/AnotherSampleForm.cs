@@ -38,5 +38,15 @@ namespace FormFire.Examples
         {
             FormFireManager<Form>.Instance.GetForms<SampleForm>().FirstOrDefault().Form<SampleForm>().Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormFireManager<Form>.Instance.CloseForms<AnotherSampleForm>();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormFireManager<Form>.Instance.CloseForms<AnotherSampleForm>(this);
+        }
     }
 }

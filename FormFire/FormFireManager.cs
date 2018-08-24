@@ -582,6 +582,23 @@ namespace FormFire.Core
             return true;
         }
 
+        /// <summary>
+        ///     Call the Close void of all filtered forms except the parameterizied form
+        /// </summary>
+        /// <typeparam name="TU">Filter forms by specificied type</typeparam>
+        /// <returns>a boolean of any form is proccessed on this void</returns>
+        public bool CloseForms<TU>(object exceptForm) where TU : T, new()
+        {
+            var findedForms = InstanceForms.Where(r => r.IsDisposed == false && r.MainForm.GetType() == typeof(TU) && !r.MainForm.Equals(exceptForm)).ToList();
+            if (!findedForms.Any()) return false;
+            findedForms.ForEach(r =>
+            {
+                ((TU)r.MainForm).Close();
+                ((TU)r.MainForm).Dispose();
+            });
+            return true;
+        }
+
         #region Events
 
         private void DetachFireFormEvents(FireForm<T> fireForm)
