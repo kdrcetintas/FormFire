@@ -70,16 +70,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormFire\FormFire.Core.csproj">
-      <Project>{c400989d-bab7-4aac-8fe3-ee51aee75301}</Project>
-      <Name>FormFire.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FormFire.Tests.licenseheader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\FormFire\FormFire.Core.csproj">
+      <Project>{c400989d-bab7-4aac-8fe3-ee51aee75301}</Project>
+      <Name>FormFire.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
